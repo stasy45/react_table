@@ -1,0 +1,17 @@
+@import 'reset-defaults';
+@import 'fonts';
+@import 'microclasses';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  width: 100dvw;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+

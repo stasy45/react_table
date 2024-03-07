@@ -1,15 +1,15 @@
 
-
 .table {
   display: table;
-  width: 100%;
   font-size: 14px;
   user-select: none;
+  border-collapse: collapse;
 
   &__head {
     display: table-header-group;
     font-weight: 400;
     font-size: 14pt;
+    height: 60px;
   }
 
   &__body {
@@ -18,20 +18,27 @@
 
   &__row {
     display: table-row;
+    transition: 300ms ease;
 
-    &:hover {
-      cursor: pointer;
-    }
+    background-color: lavender;
   }
 
   &__cell {
     display: table-cell;
     max-width: 100px;
+    max-height: 100px;
     padding: 5px 10px;
     text-align: left;
-    overflow: hidden;
+    vertical-align: middle;
 
     font-size: 14pt;
-    vertical-align: top;
+
+    transition: background-color;
+    border: none;
+    overflow: hidden;
+
+    color: gray;
+
+    border-bottom: 1px solid white;
   }
 }

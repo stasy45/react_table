@@ -1,7 +1,8 @@
-import { FC } from "react";
-import { useGate, useUnit } from "effector-react";
+import {FC} from "react";
+import {useGate, useUnit} from "effector-react";
+import css from './MainTableView.module.scss'
 import {$posts, MainTableGate} from "./model";
-import { Table } from "../../components";
+import {Link, Table} from "../../components";
 
 
 interface MainTableViewProps {
@@ -20,111 +21,63 @@ export const MainTableView: FC<MainTableViewProps> = () => {
     if (!posts) return null
 
     return (
-        <>
-            <Table>
-                <Table.Head>
+        <div className={css.table}>
+            <Table className={css.table__container}>
+                <Table.Head className={css.table__header}>
                     <Table.Row>
-                        <Table.Cell
-                            className="w-54">
-                            id
-                        </Table.Cell>
-                        <Table.Cell
-                            className="w-54">
-                            slug
-                        </Table.Cell>
-                        <Table.Cell
-                            className="w-26">
+                        <Table.Cell>
                             url
                         </Table.Cell>
-                        <Table.Cell
-                            className="w-20">
+                        <Table.Cell>
                             title
                         </Table.Cell>
-                        <Table.Cell
-                            className="w-20">
+                        <Table.Cell className="w-45">
                             content
                         </Table.Cell>
-                        <Table.Cell
-                            className="w-20">
+                        <Table.Cell>
                             image
                         </Table.Cell>
-                        <Table.Cell
-                            className="w-20">
-                            thumbnail
-                        </Table.Cell>
-                        <Table.Cell
-                            className="w-20">
+                        <Table.Cell>
                             status
                         </Table.Cell>
-                        <Table.Cell
-                            className="w-20">
+                        <Table.Cell>
                             category
                         </Table.Cell>
-                        <Table.Cell
-                            className="w-20">
+                        <Table.Cell>
                             publishedAt
                         </Table.Cell>
-                        <Table.Cell
-                            className="w-20">
+                        <Table.Cell>
                             updatedAt
-                        </Table.Cell>
-                        <Table.Cell
-                            className="w-20">
-                            title
                         </Table.Cell>
                     </Table.Row>
                 </Table.Head>
                 <Table.Body>
                     {
-                        posts.map((post, idx) => (
-                            <Table.Row>
-                                <Table.Cell
-                                    className="w-54">
-                                    {idx}
+                        posts.map(post => (
+                            <Table.Row className={css.table__row}>
+                                <Table.Cell>
+                                    <Link href={post.url} text="url"  className={css.table__link} />
                                 </Table.Cell>
-                                <Table.Cell
-                                    className="w-54">
-                                    {post.slug}
-                                </Table.Cell>
-                                <Table.Cell
-                                    className="w-26">
-                                    {post.url}
-                                </Table.Cell>
-                                <Table.Cell
-                                    className="w-20">
+                                <Table.Cell>
                                     {post.title}
                                 </Table.Cell>
-                                <Table.Cell
-                                    className="w-20">
+                                <Table.Cell className={css.table__content}>
                                     {post.content}
                                 </Table.Cell>
-                                <Table.Cell
-                                    className="w-20">
-                                    {post.image}
+                                <Table.Cell>
+                                    <Link href={post.image} text="img" className={css.table__link} />
                                 </Table.Cell>
-                                <Table.Cell
-                                    className="w-20">
-                                    {post.thumbnail}
-                                </Table.Cell>
-                                <Table.Cell
-                                    className="w-20">
+                                <Table.Cell>
                                     {post.status}
                                 </Table.Cell>
-                                <Table.Cell
-                                    className="w-20">
+                                <Table.Cell>
                                     {post.category}
                                 </Table.Cell>
-                                <Table.Cell
-                                    className="w-20">
+                                <Table.Cell>
                                     {post.publishedAt}
                                 </Table.Cell>
-                                <Table.Cell
-                                    className="w-20">
+                                <Table.Cell>
                                     {post.updatedAt}
-                                </Table.Cell>
-                                <Table.Cell
-                                    className="w-20">
-                                    {post.title}
                                 </Table.Cell>
                             </Table.Row>
                         ))
@@ -132,6 +85,6 @@ export const MainTableView: FC<MainTableViewProps> = () => {
 
                 </Table.Body>
             </Table>
-        </>
+        </div>
     )
 }

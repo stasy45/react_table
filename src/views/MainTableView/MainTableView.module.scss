@@ -1,0 +1,26 @@
+
+.table {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    width: 80%;
+    margin: 30px 0;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms ease;
+    height: 30px;
+    border-radius: 24px;
+    background-color: burlywood;
+    color: blueviolet;
+
+    &:hover {
+      color: burlywood;
+      background-color: blueviolet;
+    }
+  }
+}
