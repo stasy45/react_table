@@ -1,8 +1,9 @@
-import {FC} from "react";
-import {useGate, useUnit} from "effector-react";
+import { FC } from "react";
+import { useGate, useUnit } from "effector-react";
+import { $posts, MainTableGate } from "./model";
+import { Link, Table } from "../../components";
+
 import css from './MainTableView.module.scss'
-import {$posts, MainTableGate} from "./model";
-import {Link, Table} from "../../components";
 
 
 interface MainTableViewProps {

@@ -1,5 +1,6 @@
-import React, {createElement, ElementType} from 'react';
+import React, { createElement, ElementType } from 'react';
 import cn from 'classnames';
+
 import css from './Table.module.scss';
 
 
