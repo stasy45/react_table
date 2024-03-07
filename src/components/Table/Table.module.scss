@@ -1,0 +1,37 @@
+
+
+.table {
+  display: table;
+  width: 100%;
+  font-size: 14px;
+  user-select: none;
+
+  &__head {
+    display: table-header-group;
+    font-weight: 400;
+    font-size: 14pt;
+  }
+
+  &__body {
+    display: table-row-group;
+  }
+
+  &__row {
+    display: table-row;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__cell {
+    display: table-cell;
+    max-width: 100px;
+    padding: 5px 10px;
+    text-align: left;
+    overflow: hidden;
+
+    font-size: 14pt;
+    vertical-align: top;
+  }
+}
